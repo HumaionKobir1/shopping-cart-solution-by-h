@@ -22,15 +22,20 @@ function updateCaseNumber(isIncrease){
     return newCaseNumber
 }
 
-function btnCasePlus(){
-    const newCaseNumber = updateCaseNumber(true);
+
+function updateCaseTotalPrice(newCaseNumber){
     const caseTotalPrice = newCaseNumber * 59;
     const caseTotalElement = document.getElementById('case-total');
     caseTotalElement.innerText = caseTotalPrice;
-    
+}
+
+function btnCasePlus(){
+    const newCaseNumber = updateCaseNumber(true);
+    updateCaseTotalPrice(newCaseNumber); 
 }
 
 function btnCaseMinus(){
-    updateCaseNumber(false);
+    const newCaseNumber = updateCaseNumber(false);
+    updateCaseTotalPrice(newCaseNumber);
 }
 
