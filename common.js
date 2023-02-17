@@ -17,11 +17,11 @@ function calculteSubTotal(){
     setTextElementValueById('sub-total', currentSubTotal);
 
     // calculate tax
-    const taxAmount = currentSubTotal * 0.1;
+    const taxAmountString = (currentSubTotal * 0.1).toFixed(2);
+    const taxAmount = parseFloat(taxAmountString);
     setTextElementValueById('tax-amount', taxAmount);
 
     const finalAmount = currentSubTotal + taxAmount;
     setTextElementValueById("final-total", finalAmount);
 
 }
-// Set phone plus and inus btn working
