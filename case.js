@@ -19,7 +19,7 @@ function updateCaseNumber(isIncrease){
         newCaseNumber = previousCaseNumber - 1;
     }
     caseNumberField.value = newCaseNumber;
-    return newCaseNumber
+    return newCaseNumber;
 }
 
 
@@ -32,10 +32,12 @@ function updateCaseTotalPrice(newCaseNumber){
 function btnCasePlus(){
     const newCaseNumber = updateCaseNumber(true);
     updateCaseTotalPrice(newCaseNumber); 
+    calculteSubTotal();
 }
 
 function btnCaseMinus(){
     const newCaseNumber = updateCaseNumber(false);
     updateCaseTotalPrice(newCaseNumber);
+    calculteSubTotal();
 }
 
